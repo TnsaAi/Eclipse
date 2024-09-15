@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Comaprision | TNSA AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: rgba(34, 34, 34, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: left;
+        }
+        th {
+            background-color: rgba(34, 34, 34, 0.9);
+        }
+        tr:nth-child(even) {
+            background-color: rgba(34, 34, 34, 0.7);
+        }
+        tr:hover {
+            background-color: rgba(34, 34, 34, 0.9);
+        }
+        h2 {
+            color: #f0f0f0;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Comparison of AI Model's Architecture</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>GPT-4 (OpenAI)</th>
+                <th>TNSA’s Eclipse (TNSA)</th>
+                <th>TNSA's NGen-2 (TNSA)</th>
+                <th>Gemini (Google DeepMind)</th>
+                <th>Claude (Anthropic)</th>
+                <th>LLaMA-3 (Meta)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Token Embeddings</td>
+                <td>Standard token embeddings</td>
+                <td>Dynamic embeddings adapting to context</td>
+                <td>Custom token embeddings with OpenOrca dataset</td>
+                <td>Dynamic embeddings based on OpenAI architecture</td>
+                <td>Uses fine-tuned embeddings for tasks</td>
+                <td>Enhanced token embeddings with contextual adaptation</td>
+            </tr>
+            <tr>
+                <td>Positional Embeddings</td>
+                <td>Fixed or learned positional embeddings</td>
+                <td>Rotary Position Embeddings (RoPE) for long-range dependencies</td>
+                <td>Position embeddings with adaptive sequence handling</td>
+                <td>Learned positional embeddings</td>
+                <td>Rotary embeddings for improved long-range dependencies</td>
+                <td>RoPE for efficient handling of long-range dependencies</td>
+            </tr>
+            <tr>
+                <td>Multimodal Input Processing</td>
+                <td>Separate models for each modality</td>
+                <td>Supports multimodal input with adaptive embeddings for text, image, audio</td>
+                <td>Multimodal data processing using transformers</td>
+                <td>Multimodal support with joint embeddings for text and images</td>
+                <td>Multimodal support using enhanced text-to-image cross-attention</td>
+                <td>Advanced multimodal input handling with transformers</td>
+            </tr>
+            <tr>
+                <td>Self-Attention Mechanism</td>
+                <td>Standard multi-head self-attention</td>
+                <td>Adaptive multi-head attention with RoPE</td>
+                <td>Multi-head self-attention with dynamic query-key interaction</td>
+                <td>Enhanced multi-head self-attention with attention weighting</td>
+                <td>Sparse attention mechanism for efficiency in long sequences</td>
+                <td>Multi-head self-attention with optimized sparse attention</td>
+            </tr>
+            <tr>
+                <td>Rotary Position Embedding (RoPE)</td>
+                <td>Not used</td>
+                <td>Integrated for better handling of long-range dependencies</td>
+                <td>Integrated RoPE for longer sequence handling</td>
+                <td>Not used</td>
+                <td>Integrated for long-range dependencies handling</td>
+                <td>Advanced use of RoPE for long sequences</td>
+            </tr>
+            <tr>
+                <td>Deliberation Mechanism</td>
+                <td>Single-pass processing</td>
+                <td>Hierarchical multi-pass with internal reflection</td>
+                <td>Recursive passes with internal reflection mechanisms</td>
+                <td>Iterative reasoning with multi-pass reflection</td>
+                <td>Multi-pass deliberation for deeper understanding</td>
+                <td>Multi-pass deliberation with enhanced decision-making</td>
+            </tr>
+            <tr>
+                <td>Problem-Specific Reasoning</td>
+                <td>Pattern recognition-based reasoning</td>
+                <td>Recursive problem breakdown with self-correction</td>
+                <td>Logical step-by-step generation and recursive problem solving</td>
+                <td>Problem-specific reasoning modules for complex tasks</td>
+                <td>Enhanced symbolic reasoning modules for problem-solving</td>
+                <td>Problem-specific breakdown with improved logic handling</td>
+            </tr>
+            <tr>
+                <td>Context-Aware Symbolic Reasoning</td>
+                <td>Lacks explicit symbolic reasoning</td>
+                <td>Handles formal proofs and symbolic math</td>
+                <td>Symbolic reasoning integrated with neural-symbolic models</td>
+                <td>Includes mathematical reasoning capabilities</td>
+                <td>Includes formal symbolic reasoning for proofs</td>
+                <td>Supports symbolic and neural-symbolic reasoning</td>
+            </tr>
+            <tr>
+                <td>Cross-Modality Attention</td>
+                <td>Not natively multimodal</td>
+                <td>Cross-modality attention integrating text and image/audio data</td>
+                <td>Cross-modality attention for images, text, and audio</td>
+                <td>Cross-modality co-attention for improved text-image interactions</td>
+                <td>Cross-modality co-attention layers for text, image, and audio</td>
+                <td>Strong cross-modality attention mechanisms</td>
+            </tr>
+            <tr>
+                <td>Specialized Knowledge Integration</td>
+                <td>General pre-trained knowledge</td>
+                <td>Dedicated knowledge modules for science, coding, and math</td>
+                <td>Retrieval-augmented generation for scientific facts and code</td>
+                <td>Fine-tuned on specific domains like science and technology</td>
+                <td>Domain-specific modules for coding and formal logic</td>
+                <td>Enhanced knowledge integration with domain-specific modules</td>
+            </tr>
+            <tr>
+                <td>Memory and Adaptive Attention</td>
+                <td>Limited to context window</td>
+                <td>Adaptive memory networks for long-term retention</td>
+                <td>Dynamic attention spans with task-based memory</td>
+                <td>Memory-enhanced transformers for longer context retention</td>
+                <td>Dynamic memory networks with attention span adjustments</td>
+                <td>Long-term memory retention and dynamic attention adjustments</td>
+            </tr>
+            <tr>
+                <td>Meta-Learning and Adaptive Learning</td>
+                <td>Lacks explicit meta-learning</td>
+                <td>Meta-learning with reinforcement mechanisms</td>
+                <td>Model-agnostic meta-learning (MAML) and adaptive RLHF</td>
+                <td>Adaptive learning with reinforcement from task feedback</td>
+                <td>Meta-learning integrated with human feedback</td>
+                <td>Advanced meta-learning capabilities and adaptive learning</td>
+            </tr>
+            <tr>
+                <td>Enhanced Reasoning Modules</td>
+                <td>Sequential reasoning</td>
+                <td>Hierarchical reasoning with Q-value estimators</td>
+                <td>Multi-step problem solving with hierarchical attention</td>
+                <td>Enhanced hierarchical transformers for better reasoning</td>
+                <td>Advanced multi-step reasoning with reward-prediction networks</td>
+                <td>Hierarchical attention for complex reasoning tasks</td>
+            </tr>
+            <tr>
+                <td>Final Linear and Softmax Layer</td>
+                <td>Standard softmax over tokens</td>
+                <td>Adaptive softmax with improved response accuracy</td>
+                <td>Gumbel-softmax for sampling efficiency</td>
+                <td>Standard softmax for token prediction</td>
+                <td>Adaptive softmax for enhanced token-level deliberation</td>
+                <td>Advanced adaptive softmax for complex token generation</td>
+            </tr>
+            <tr>
+                <td>Loss Function and Optimization</td>
+                <td>Cross-entropy loss with Adam optimizer</td>
+                <td>Gradient clipping and AdamW optimizer for improved convergence</td>
+                <td>Custom loss functions and advanced optimizers (LAMB, Adafactor)</td>
+                <td>Cross-entropy with Adam and learning rate schedulers</td>
+                <td>Focal loss for imbalanced tasks and advanced optimizers</td>
+                <td>Custom loss functions and dynamic gradient clipping</td>
+            </tr>
+            <tr>
+                <td>Training and Parallelization</td>
+                <td>Standard parallelization with scaling techniques</td>
+                <td>Advanced parallel training with dynamic batch sizes</td>
+                <td>Model parallelism and data parallelism with dynamic batching</td>
+                <td>Scalable parallel training with DeepSpeed optimizations</td>
+                <td>Advanced parallel training for multi-modal tasks</td>
+                <td>Efficient parallelization and adaptive training techniques</td>
+            </tr>
+            <tr>
+                <td>Output Deliberation and Control</td>
+                <td>Direct generation without token-level control</td>
+                <td>Token-level deliberation and adjustable output timing</td>
+                <td>Adjustable output timing with beam search and top-k sampling</td>
+                <td>Output control based on task complexity and quality balancing</td>
+                <td>Beam search and token-level deliberation for better generation</td>
+                <td>Token-level control with optimized beam search</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
